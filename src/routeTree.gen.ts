@@ -9,38 +9,128 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as QualificacoesRouteImport } from './routes/qualificacoes'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as AdmissoesRouteImport } from './routes/admissoes'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PlataformaPortalRouteImport } from './routes/plataforma.portal'
+import { Route as PlataformaBibliotecaRouteImport } from './routes/plataforma.biblioteca'
 
+const QualificacoesRoute = QualificacoesRouteImport.update({
+  id: '/qualificacoes',
+  path: '/qualificacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissoesRoute = AdmissoesRouteImport.update({
+  id: '/admissoes',
+  path: '/admissoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlataformaPortalRoute = PlataformaPortalRouteImport.update({
+  id: '/plataforma/portal',
+  path: '/plataforma/portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlataformaBibliotecaRoute = PlataformaBibliotecaRouteImport.update({
+  id: '/plataforma/biblioteca',
+  path: '/plataforma/biblioteca',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admissoes': typeof AdmissoesRoute
+  '/contacto': typeof ContactoRoute
+  '/qualificacoes': typeof QualificacoesRoute
+  '/plataforma/biblioteca': typeof PlataformaBibliotecaRoute
+  '/plataforma/portal': typeof PlataformaPortalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admissoes': typeof AdmissoesRoute
+  '/contacto': typeof ContactoRoute
+  '/qualificacoes': typeof QualificacoesRoute
+  '/plataforma/biblioteca': typeof PlataformaBibliotecaRoute
+  '/plataforma/portal': typeof PlataformaPortalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admissoes': typeof AdmissoesRoute
+  '/contacto': typeof ContactoRoute
+  '/qualificacoes': typeof QualificacoesRoute
+  '/plataforma/biblioteca': typeof PlataformaBibliotecaRoute
+  '/plataforma/portal': typeof PlataformaPortalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admissoes'
+    | '/contacto'
+    | '/qualificacoes'
+    | '/plataforma/biblioteca'
+    | '/plataforma/portal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admissoes'
+    | '/contacto'
+    | '/qualificacoes'
+    | '/plataforma/biblioteca'
+    | '/plataforma/portal'
+  id:
+    | '__root__'
+    | '/'
+    | '/admissoes'
+    | '/contacto'
+    | '/qualificacoes'
+    | '/plataforma/biblioteca'
+    | '/plataforma/portal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdmissoesRoute: typeof AdmissoesRoute
+  ContactoRoute: typeof ContactoRoute
+  QualificacoesRoute: typeof QualificacoesRoute
+  PlataformaBibliotecaRoute: typeof PlataformaBibliotecaRoute
+  PlataformaPortalRoute: typeof PlataformaPortalRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/qualificacoes': {
+      id: '/qualificacoes'
+      path: '/qualificacoes'
+      fullPath: '/qualificacoes'
+      preLoaderRoute: typeof QualificacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissoes': {
+      id: '/admissoes'
+      path: '/admissoes'
+      fullPath: '/admissoes'
+      preLoaderRoute: typeof AdmissoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,12 +138,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/plataforma/portal': {
+      id: '/plataforma/portal'
+      path: '/plataforma/portal'
+      fullPath: '/plataforma/portal'
+      preLoaderRoute: typeof PlataformaPortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plataforma/biblioteca': {
+      id: '/plataforma/biblioteca'
+      path: '/plataforma/biblioteca'
+      fullPath: '/plataforma/biblioteca'
+      preLoaderRoute: typeof PlataformaBibliotecaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdmissoesRoute: AdmissoesRoute,
+  ContactoRoute: ContactoRoute,
+  QualificacoesRoute: QualificacoesRoute,
+  PlataformaBibliotecaRoute: PlataformaBibliotecaRoute,
+  PlataformaPortalRoute: PlataformaPortalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
