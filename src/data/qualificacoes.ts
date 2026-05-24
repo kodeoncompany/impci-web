@@ -40,7 +40,7 @@ export const qualificacoes: Qualificacao[] = [
       "Administração Hospitalar",
       "Nutrição e Medicina Geral",
     ],
-    imagem: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1600&q=80",
+    imagem: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1600&q=80",
   },
   {
     id: 2,
@@ -56,7 +56,7 @@ export const qualificacoes: Qualificacao[] = [
       "Suporte Informático",
       "Administração de Sistemas e Redes Informáticas",
     ],
-    imagem: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&q=80",
+    imagem: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80",
   },
   {
     id: 3,
@@ -69,7 +69,7 @@ export const qualificacoes: Qualificacao[] = [
     cor: "#8B5E3C",
     area: "Engenharia",
     cvs: ["Construção Civil"],
-    imagem: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80",
+    imagem: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80",
   },
   {
     id: 4,
@@ -87,7 +87,7 @@ export const qualificacoes: Qualificacao[] = [
       "Gestão Autárquica (Ad. Pública)",
       "Contabilidade",
     ],
-    imagem: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80",
+    imagem: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&q=80",
   },
   {
     id: 5,
@@ -105,7 +105,7 @@ export const qualificacoes: Qualificacao[] = [
       "Pecuária",
       "Extensão e Fomento Agrário",
     ],
-    imagem: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600&q=80",
+    imagem: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&q=80",
   },
   {
     id: 6,
@@ -118,7 +118,7 @@ export const qualificacoes: Qualificacao[] = [
     cor: "#7C3AED",
     area: "Educacao",
     cvs: ["Educação da Infância"],
-    imagem: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&q=80",
+    imagem: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80",
   },
   {
     id: 7,
@@ -131,7 +131,7 @@ export const qualificacoes: Qualificacao[] = [
     cor: "#374151",
     area: "Engenharia",
     cvs: ["Electricidade Industrial"],
-    imagem: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80",
+    imagem: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80",
   },
 ];
 

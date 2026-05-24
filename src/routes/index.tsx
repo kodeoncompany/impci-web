@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeroSlider } from "@/components/home/HeroSlider";
 import { DiferenciaisBanner } from "@/components/home/DiferenciaisBanner";
-import { QualificacoesPreview } from "@/components/home/QualificacoesPreview";
+import { QuemSomos } from "@/components/home/QuemSomos";
 import { PlataformaSection } from "@/components/home/PlataformaSection";
 import { VantagensSection } from "@/components/home/VantagensSection";
 import { CTAFinal } from "@/components/home/CTAFinal";
@@ -33,7 +33,7 @@ function HomePage() {
     <>
       <HeroSlider />
       <DiferenciaisBanner />
-      <QualificacoesPreview />
+      <QuemSomos />
       <PlataformaSection />
       <VantagensSection />
       <CTAFinal />

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle, Phone } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { PreInscricaoForm } from "@/components/admissoes/PreInscricaoForm";
 
 export const Route = createFileRoute("/admissoes")({
   head: () => ({
@@ -71,7 +72,12 @@ function AdmisoesPage() {
             </p>
           </div>
 
-          {/* Como candidatar + documentos */}
+          {/* Formulário de pré-inscrição */}
+          <div className="mb-16">
+            <PreInscricaoForm />
+          </div>
+
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <div className="bg-white rounded-xl shadow-sm p-8">
               <h3 className="font-display font-bold text-2xl text-foreground mb-6">

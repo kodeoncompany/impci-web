@@ -90,13 +90,13 @@ export function Navbar() {
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3">
                 <div className="bg-white rounded-lg shadow-lg p-2 w-[280px] border border-border">
                   <DropdownItem
-                    to="/plataforma/biblioteca"
+                    to="/plataforma/biblioteca/login"
                     icon={<BookOpen size={20} className="text-primary" />}
                     title="Biblioteca Virtual"
                     subtitle="Materiais e recursos de estudo"
                   />
                   <DropdownItem
-                    to="/plataforma/portal"
+                    to="/plataforma/portal/login"
                     icon={<GraduationCap size={20} className="text-primary" />}
                     title="Portal do Estudante"
                     subtitle="Notas, horários e documentos"
@@ -149,13 +149,13 @@ export function Navbar() {
             {mobilePlatOpen && (
               <div className="pl-4 pb-2 space-y-1">
                 <MobileLink
-                  to="/plataforma/biblioteca"
+                  to="/plataforma/biblioteca/login"
                   label="Biblioteca Virtual"
                   onClick={() => setMobileOpen(false)}
                   small
                 />
                 <MobileLink
-                  to="/plataforma/portal"
+                  to="/plataforma/portal/login"
                   label="Portal do Estudante"
                   onClick={() => setMobileOpen(false)}
                   small

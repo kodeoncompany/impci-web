@@ -14,7 +14,7 @@ export function PlataformaSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           <Block
-            to="/plataforma/biblioteca"
+            to="/plataforma/biblioteca/login"
             gradient="linear-gradient(135deg, #1A6AB5 0%, #0D4A8A 100%)"
             Icon={Library}
             title="Biblioteca Virtual"
@@ -22,7 +22,7 @@ export function PlataformaSection() {
             cta="Aceder à Biblioteca"
           />
           <Block
-            to="/plataforma/portal"
+            to="/plataforma/portal/login"
             gradient="linear-gradient(135deg, #E8541A 0%, #C94010 100%)"
             Icon={GraduationCap}
             title="Portal do Estudante"

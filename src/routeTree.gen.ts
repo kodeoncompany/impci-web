@@ -13,8 +13,8 @@ import { Route as QualificacoesRouteImport } from './routes/qualificacoes'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as AdmissoesRouteImport } from './routes/admissoes'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as PlataformaPortalRouteImport } from './routes/plataforma.portal'
-import { Route as PlataformaBibliotecaRouteImport } from './routes/plataforma.biblioteca'
+import { Route as PlataformaPortalLoginRouteImport } from './routes/plataforma.portal.login'
+import { Route as PlataformaBibliotecaLoginRouteImport } from './routes/plataforma.biblioteca.login'
 
 const QualificacoesRoute = QualificacoesRouteImport.update({
   id: '/qualificacoes',
@@ -36,32 +36,33 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PlataformaPortalRoute = PlataformaPortalRouteImport.update({
-  id: '/plataforma/portal',
-  path: '/plataforma/portal',
+const PlataformaPortalLoginRoute = PlataformaPortalLoginRouteImport.update({
+  id: '/plataforma/portal/login',
+  path: '/plataforma/portal/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PlataformaBibliotecaRoute = PlataformaBibliotecaRouteImport.update({
-  id: '/plataforma/biblioteca',
-  path: '/plataforma/biblioteca',
-  getParentRoute: () => rootRouteImport,
-} as any)
+const PlataformaBibliotecaLoginRoute =
+  PlataformaBibliotecaLoginRouteImport.update({
+    id: '/plataforma/biblioteca/login',
+    path: '/plataforma/biblioteca/login',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admissoes': typeof AdmissoesRoute
   '/contacto': typeof ContactoRoute
   '/qualificacoes': typeof QualificacoesRoute
-  '/plataforma/biblioteca': typeof PlataformaBibliotecaRoute
-  '/plataforma/portal': typeof PlataformaPortalRoute
+  '/plataforma/biblioteca/login': typeof PlataformaBibliotecaLoginRoute
+  '/plataforma/portal/login': typeof PlataformaPortalLoginRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admissoes': typeof AdmissoesRoute
   '/contacto': typeof ContactoRoute
   '/qualificacoes': typeof QualificacoesRoute
-  '/plataforma/biblioteca': typeof PlataformaBibliotecaRoute
-  '/plataforma/portal': typeof PlataformaPortalRoute
+  '/plataforma/biblioteca/login': typeof PlataformaBibliotecaLoginRoute
+  '/plataforma/portal/login': typeof PlataformaPortalLoginRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -69,8 +70,8 @@ export interface FileRoutesById {
   '/admissoes': typeof AdmissoesRoute
   '/contacto': typeof ContactoRoute
   '/qualificacoes': typeof QualificacoesRoute
-  '/plataforma/biblioteca': typeof PlataformaBibliotecaRoute
-  '/plataforma/portal': typeof PlataformaPortalRoute
+  '/plataforma/biblioteca/login': typeof PlataformaBibliotecaLoginRoute
+  '/plataforma/portal/login': typeof PlataformaPortalLoginRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -79,24 +80,24 @@ export interface FileRouteTypes {
     | '/admissoes'
     | '/contacto'
     | '/qualificacoes'
-    | '/plataforma/biblioteca'
-    | '/plataforma/portal'
+    | '/plataforma/biblioteca/login'
+    | '/plataforma/portal/login'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/admissoes'
     | '/contacto'
     | '/qualificacoes'
-    | '/plataforma/biblioteca'
-    | '/plataforma/portal'
+    | '/plataforma/biblioteca/login'
+    | '/plataforma/portal/login'
   id:
     | '__root__'
     | '/'
     | '/admissoes'
     | '/contacto'
     | '/qualificacoes'
-    | '/plataforma/biblioteca'
-    | '/plataforma/portal'
+    | '/plataforma/biblioteca/login'
+    | '/plataforma/portal/login'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -104,8 +105,8 @@ export interface RootRouteChildren {
   AdmissoesRoute: typeof AdmissoesRoute
   ContactoRoute: typeof ContactoRoute
   QualificacoesRoute: typeof QualificacoesRoute
-  PlataformaBibliotecaRoute: typeof PlataformaBibliotecaRoute
-  PlataformaPortalRoute: typeof PlataformaPortalRoute
+  PlataformaBibliotecaLoginRoute: typeof PlataformaBibliotecaLoginRoute
+  PlataformaPortalLoginRoute: typeof PlataformaPortalLoginRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -138,18 +139,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/plataforma/portal': {
-      id: '/plataforma/portal'
-      path: '/plataforma/portal'
-      fullPath: '/plataforma/portal'
-      preLoaderRoute: typeof PlataformaPortalRouteImport
+    '/plataforma/portal/login': {
+      id: '/plataforma/portal/login'
+      path: '/plataforma/portal/login'
+      fullPath: '/plataforma/portal/login'
+      preLoaderRoute: typeof PlataformaPortalLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/plataforma/biblioteca': {
-      id: '/plataforma/biblioteca'
-      path: '/plataforma/biblioteca'
-      fullPath: '/plataforma/biblioteca'
-      preLoaderRoute: typeof PlataformaBibliotecaRouteImport
+    '/plataforma/biblioteca/login': {
+      id: '/plataforma/biblioteca/login'
+      path: '/plataforma/biblioteca/login'
+      fullPath: '/plataforma/biblioteca/login'
+      preLoaderRoute: typeof PlataformaBibliotecaLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -160,8 +161,8 @@ const rootRouteChildren: RootRouteChildren = {
   AdmissoesRoute: AdmissoesRoute,
   ContactoRoute: ContactoRoute,
   QualificacoesRoute: QualificacoesRoute,
-  PlataformaBibliotecaRoute: PlataformaBibliotecaRoute,
-  PlataformaPortalRoute: PlataformaPortalRoute,
+  PlataformaBibliotecaLoginRoute: PlataformaBibliotecaLoginRoute,
+  PlataformaPortalLoginRoute: PlataformaPortalLoginRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
