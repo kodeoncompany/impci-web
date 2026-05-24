@@ -42,8 +42,8 @@ export function Footer() {
               <FooterLink to="/qualificacoes">Qualificações</FooterLink>
               <FooterLink to="/admissoes">Admissões</FooterLink>
               <FooterLink to="/contacto">Contacto</FooterLink>
-              <FooterLink to="/plataforma/biblioteca">Biblioteca Virtual</FooterLink>
-              <FooterLink to="/plataforma/portal">Portal do Estudante</FooterLink>
+              <FooterLink to="/plataforma/biblioteca/login">Biblioteca Virtual</FooterLink>
+              <FooterLink to="/plataforma/portal/login">Portal do Estudante</FooterLink>
             </ul>
           </div>
 
