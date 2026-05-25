@@ -1,5 +1,6 @@
 import { BookOpen, Users, Shield } from "lucide-react";
 import { ILink } from "@/components/ui/IButton";
+import institutoImg from "@/assets/impci-instituto.jpg";
 
 export function QuemSomos() {
   return (
@@ -9,7 +10,7 @@ export function QuemSomos() {
           {/* Visual */}
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80"
+              src={institutoImg}
               alt="Estudantes africanos em ambiente académico"
               loading="lazy"
               className="w-full h-[420px] lg:h-[520px] object-cover rounded-2xl shadow-lg"

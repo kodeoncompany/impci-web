@@ -1,3 +1,5 @@
+import saudeImg from "@/assets/impci-saude.jpg";
+
 export type Qualificacao = {
   id: number;
   slug: string;
@@ -40,7 +42,7 @@ export const qualificacoes: Qualificacao[] = [
       "Administração Hospitalar",
       "Nutrição e Medicina Geral",
     ],
-    imagem: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1600&q=80",
+    imagem: saudeImg,
   },
   {
     id: 2,
