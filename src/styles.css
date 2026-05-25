@@ -21,7 +21,7 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
 
-  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
   --font-ui: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-accent: "Oswald", ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-ui);
